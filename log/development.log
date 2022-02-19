@@ -40,3 +40,71 @@ Processing by PostsController#show as HTML
   [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
   Rendered posts/show.html.erb within layouts/application (0.4ms)
 Completed 200 OK in 27ms (Views: 10.4ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.1ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title goes here"], ["description", "Description goes here"], ["created_at", "2022-02-19 23:50:22.861942"], ["updated_at", "2022-02-19 23:50:22.861942"]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/posts" for ::1 at 2022-02-19 18:53:44 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (1.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (1.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (50.0ms)
+Completed 200 OK in 661ms (Views: 548.9ms | ActiveRecord: 20.9ms)
+
+
+Started GET "/posts/new" for ::1 at 2022-02-19 18:53:53 -0500
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 45ms (Views: 34.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for ::1 at 2022-02-19 18:54:14 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QzpjCg8pe1QA1N9YEKuQkOaZEKpM4x0jK4Pnwz7Nj/Ks+0794rz9YvRnpcPHQiNftS1O41v3J2f52BZQ3iuPTg==", "title"=>"Post title Test", "description"=>"Post description test", "commit"=>"Submit Post"}
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `saves' for #<Post:0x00007fd6cf8c1c68>
+Did you mean?  save
+               save!):
+  
+app/controllers/posts_controller.rb:19:in `create'
+  Rendering /Users/johnkyeremeh/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/johnkyeremeh/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/johnkyeremeh/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (15.9ms)
+  Rendering /Users/johnkyeremeh/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/johnkyeremeh/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.1ms)
+  Rendering /Users/johnkyeremeh/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/johnkyeremeh/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.1ms)
+  Rendered /Users/johnkyeremeh/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (118.8ms)
+Started POST "/posts" for ::1 at 2022-02-19 18:54:26 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QzpjCg8pe1QA1N9YEKuQkOaZEKpM4x0jK4Pnwz7Nj/Ks+0794rz9YvRnpcPHQiNftS1O41v3J2f52BZQ3iuPTg==", "title"=>"Post title Test", "description"=>"Post description test", "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (5.2ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Post title Test"], ["description", "Post description test"], ["created_at", "2022-02-19 23:54:26.533684"], ["updated_at", "2022-02-19 23:54:26.533684"]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+No template found for PostsController#create, rendering head :no_content
+Completed 204 No Content in 240ms (ActiveRecord: 9.6ms)
+
+
+Started POST "/posts" for ::1 at 2022-02-19 18:54:31 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QzpjCg8pe1QA1N9YEKuQkOaZEKpM4x0jK4Pnwz7Nj/Ks+0794rz9YvRnpcPHQiNftS1O41v3J2f52BZQ3iuPTg==", "title"=>"Post title Test", "description"=>"Post description test", "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Post title Test"], ["description", "Post description test"], ["created_at", "2022-02-19 23:54:31.286788"], ["updated_at", "2022-02-19 23:54:31.286788"]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+No template found for PostsController#create, rendering head :no_content
+Completed 204 No Content in 78ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/posts/" for ::1 at 2022-02-19 18:55:27 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 85ms (Views: 81.3ms | ActiveRecord: 0.3ms)
+
+
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
